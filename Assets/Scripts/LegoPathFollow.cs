@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class LegoPathFollow : MonoBehaviour
 {
+    // Path Follow
     public LegoPath path;
     public bool pathFollowEnabled = false;
 
     private Vector3 acceleration;
     private Vector3 velocity;
     private Vector3 force;
+    // Arrive
+    public bool arriveEnabled = false;
+    public Transform arriveTargetTransform;
+    public Vector3 arriveTarget;
+    public float slowingDistance = 80;
 
+    // Ship speed floats
     private float shipSpeed;
     private float shipMass = 1f;
     private float shipMaxSpeed = 10f;
-
     private float banking = 0.1f;
     private float damping = 0.1f;
 
@@ -36,6 +42,16 @@ public class LegoPathFollow : MonoBehaviour
         return SeekTarget(nextWaypoint);
     }
 
+    public Vector3 Arrive(Vector3 target)
+    {
+        Vector3 toTarget = target - transform.position;
+        float dist = toTarget.magnitude;
+        float ramped = (dist / slowingDistance) * shipMaxSpeed;
+        float clamped = Mathf.Min(ramped, shipMaxSpeed);
+        Vector3 desired = clamped * (toTarget / dist);
+        return desired - velocity;
+    }
+
     Vector3 Calculate()
     {
         force = Vector3.zero;
@@ -43,6 +59,16 @@ public class LegoPathFollow : MonoBehaviour
         {
             force += PathFollow();
         }
+        
+        if (arriveEnabled)
+        {
+            if (arriveTargetTransform != null)
+            {
+                arriveTarget = arriveTargetTransform.position;                
+            }
+            force += Arrive(arriveTarget);
+        }
+
         return force;
     }
 
