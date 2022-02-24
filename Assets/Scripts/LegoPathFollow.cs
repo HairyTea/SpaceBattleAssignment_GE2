@@ -16,6 +16,10 @@ public class LegoPathFollow : MonoBehaviour
     public Transform arriveTargetTransform;
     public Vector3 arriveTarget;
     public float slowingDistance = 80;
+    // Pursue
+    public bool pursueEnabled = false;
+    public LegoPathFollow pursueTarget;
+    public Vector3 pursueTargetPos;
 
     // Ship speed floats
     private float shipSpeed;
@@ -23,6 +27,14 @@ public class LegoPathFollow : MonoBehaviour
     private float shipMaxSpeed = 10f;
     private float banking = 0.1f;
     private float damping = 0.1f;
+
+    public Vector3 Pursue(LegoPathFollow pursueTarget)
+    {
+        float dist = Vector3.Distance(pursueTarget.transform.position, transform.position);
+        float time = dist / shipMaxSpeed;
+        pursueTargetPos = pursueTarget.transform.position + pursueTarget.velocity * time;
+        return SeekTarget(pursueTargetPos);
+    }
 
     public Vector3 SeekTarget(Vector3 seekTarget)
     {
@@ -67,6 +79,11 @@ public class LegoPathFollow : MonoBehaviour
                 arriveTarget = arriveTargetTransform.position;                
             }
             force += Arrive(arriveTarget);
+        }
+
+        if (pursueEnabled)
+        {
+            force += Pursue(pursueTarget);
         }
 
         return force;

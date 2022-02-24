@@ -56,10 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\LegoPathFollow.cs" />
-    <Compile Include="Assets\Scripts\LegoPath.cs" />
+    <Compile Include="Assets\Scripts\LegoShipShoot.cs" />
     <Compile Include="Assets\Scripts\LegoShipHealth.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
+    <Compile Include="Assets\Scripts\LegoPathFollow.cs" />
+    <Compile Include="Assets\Scripts\LegoPath.cs" />
+    <Compile Include="Assets\Scripts\BulletManager.cs" />
+    <Compile Include="Assets\Scripts\LegoShipController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
