@@ -4,106 +4,188 @@ using UnityEngine;
 
 public class LegoPathFollow : MonoBehaviour
 {
-    // Path Follow
-    public LegoPath path;
-    public bool pathFollowEnabled = false;
 
-    private Vector3 acceleration;
-    private Vector3 velocity;
-    private Vector3 force;
-    // Arrive
+    public Vector3 velocity;
+    public float speed;
+    public Vector3 acceleration;
+    public Vector3 force;
+    public float maxSpeed = 5;
+    public float maxForce = 10;
+
+    public float mass = 1;
+
+    public bool seekEnabled = true;
+    public Transform seekTargetTransform;
+    public Vector3 seekTarget;
+
     public bool arriveEnabled = false;
     public Transform arriveTargetTransform;
     public Vector3 arriveTarget;
     public float slowingDistance = 80;
-    // Pursue
+
+    public LegoPath path;
+    public bool pathFollowingEnabled = false;
+    public float waypointDistance = 3;
+
+    public float banking = 0.1f;
+
+    public float damping = 0.1f;
+
+    public bool playerSteeringEnabled = false;
+    public float steeringForce = 100;
+
     public bool pursueEnabled = false;
     public LegoPathFollow pursueTarget;
+
     public Vector3 pursueTargetPos;
 
-    // Ship speed floats
-    private float shipSpeed;
-    private float shipMass = 1f;
-    private float shipMaxSpeed = 10f;
-    private float banking = 0.1f;
-    private float damping = 0.1f;
+    public bool offsetPursueEnabled = false;
+    public LegoPathFollow leader;
+    public Vector3 offset;
+    private Vector3 worldTarget;
+    private Vector3 targetPos;
 
     public Vector3 Pursue(LegoPathFollow pursueTarget)
     {
         float dist = Vector3.Distance(pursueTarget.transform.position, transform.position);
-        float time = dist / shipMaxSpeed;
-        pursueTargetPos = pursueTarget.transform.position + pursueTarget.velocity * time;
-        return SeekTarget(pursueTargetPos);
+        float time = dist / maxSpeed;
+        pursueTargetPos = pursueTarget.transform.position
+                    + pursueTarget.velocity * time;
+        return Seek(pursueTargetPos);
     }
 
-    public Vector3 SeekTarget(Vector3 seekTarget)
+    public Vector3 OffsetPursue(LegoPathFollow leader)
     {
-        Vector3 desired = (seekTarget - transform.position).normalized * shipMaxSpeed;
-        return desired - velocity;
+        worldTarget = (leader.transform.rotation * offset)
+                + leader.transform.position;
+
+
+        float dist = Vector3.Distance(transform.position, worldTarget);
+        float time = dist / maxSpeed;
+
+        targetPos = worldTarget + (leader.velocity * time);
+        return Arrive(targetPos);
+    }
+
+    void Start()
+    {
+        if (offsetPursueEnabled)
+        {
+            offset = transform.position - leader.transform.position;
+            offset = Quaternion.Inverse(leader.transform.rotation) * offset;
+        }
+    }
+
+    public Vector3 PlayerSteering()
+    {
+        Vector3 force = Vector3.zero;
+        force += Input.GetAxis("Vertical") * transform.forward * steeringForce;
+
+        Vector3 projected = transform.right;
+        projected.y = 0;
+        projected.Normalize();
+
+        force += Input.GetAxis("Horizontal") * projected * steeringForce;
+
+        return force;
     }
 
     public Vector3 PathFollow()
     {
         Vector3 nextWaypoint = path.Next();
-        float distance = Vector3.Distance(nextWaypoint, transform.position);
-
-        if (distance < 1.0f)
+        if (!path.isLooped && path.IsLast())
         {
-            path.AdvanceToNext();
+            return Arrive(nextWaypoint);
         }
-        return SeekTarget(nextWaypoint);
+        else
+        {
+            if (Vector3.Distance(transform.position, nextWaypoint) < waypointDistance)
+            {
+                path.AdvanceToNext();
+            }
+            return Seek(nextWaypoint);
+        }
+    }
+
+    public Vector3 Seek(Vector3 target)
+    {
+        Vector3 toTarget = target - transform.position;
+        Vector3 desired = toTarget.normalized * maxSpeed;
+
+        return (desired - velocity);
     }
 
     public Vector3 Arrive(Vector3 target)
     {
         Vector3 toTarget = target - transform.position;
         float dist = toTarget.magnitude;
-        float ramped = (dist / slowingDistance) * shipMaxSpeed;
-        float clamped = Mathf.Min(ramped, shipMaxSpeed);
+        if (dist == 0.0f)
+        {
+            return Vector3.zero;
+        }
+        float ramped = (dist / slowingDistance) * maxSpeed;
+        float clamped = Mathf.Min(ramped, maxSpeed);
         Vector3 desired = clamped * (toTarget / dist);
         return desired - velocity;
     }
 
-    Vector3 Calculate()
+    public Vector3 CalculateForce()
     {
-        force = Vector3.zero;
-        if (pathFollowEnabled)
+        Vector3 f = Vector3.zero;
+        if (seekEnabled)
         {
-            force += PathFollow();
+            if (seekTargetTransform != null)
+            {
+                seekTarget = seekTargetTransform.position;
+            }
+            f += Seek(seekTarget);
         }
-        
+
         if (arriveEnabled)
         {
             if (arriveTargetTransform != null)
             {
-                arriveTarget = arriveTargetTransform.position;                
+                arriveTarget = arriveTargetTransform.position;
             }
-            force += Arrive(arriveTarget);
+            f += Arrive(arriveTarget);
+        }
+
+        if (pathFollowingEnabled)
+        {
+            f += PathFollow();
+        }
+
+        if (playerSteeringEnabled)
+        {
+            f += PlayerSteering();
         }
 
         if (pursueEnabled)
         {
-            force += Pursue(pursueTarget);
+            f += Pursue(pursueTarget);
         }
 
-        return force;
+        if (offsetPursueEnabled)
+        {
+            f += OffsetPursue(leader);
+        }
+
+        return f;
     }
 
     void Update()
     {
-        force = Calculate();
-        acceleration = force / shipMass;
-        velocity += acceleration * Time.deltaTime;
-        transform.position += velocity * Time.deltaTime;
-
-        shipSpeed = velocity.magnitude;
-
-        if (shipSpeed > 0)
+        force = CalculateForce();
+        acceleration = force / mass;
+        velocity = velocity + acceleration * Time.deltaTime;
+        transform.position = transform.position + velocity * Time.deltaTime;
+        speed = velocity.magnitude;
+        if (speed > 0)
         {
             Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
-
             transform.LookAt(transform.position + velocity, tempUp);
             velocity -= (damping * velocity * Time.deltaTime);
         }
     }
 }
+
