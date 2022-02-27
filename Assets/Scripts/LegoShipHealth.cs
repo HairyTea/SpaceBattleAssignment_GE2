@@ -8,6 +8,8 @@ public class LegoShipHealth : MonoBehaviour
     public List<GameObject> particlesExplosion;
     public GameObject soundBreaking;
 
+    public bool good, bad;
+
     void Start()
     {
         
@@ -24,6 +26,25 @@ public class LegoShipHealth : MonoBehaviour
             soundBreaking.GetComponent<AudioSource>().Play();
             
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (good)
+        {
+            if (collision.gameObject.name == "BulletBad(Clone)")
+            {
+                health--;
+            }
+        }
+
+        if (bad)
+        {
+            if (collision.gameObject.name == "Bullet(Clone)")
+            {
+                health--;
+            }
         }
     }
 }

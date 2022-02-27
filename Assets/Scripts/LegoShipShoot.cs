@@ -14,6 +14,7 @@ public class LegoShipShoot : MonoBehaviour
     public float lifeTime = 3f;
     public float spawnDelay = 1f;
     private bool canShoot = true;
+    public GameObject soundShoot;
 
     public List<GameObject> bullets;
 
@@ -52,6 +53,7 @@ public class LegoShipShoot : MonoBehaviour
     IEnumerator ShootShip()
     {
         Fire();
+        soundShoot.GetComponent<AudioSource>().Play();
         canShoot = false;
         yield return new WaitForSeconds(1f);
         canShoot = true;

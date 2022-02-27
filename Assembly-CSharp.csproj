@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\LegoPath.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
     <Compile Include="Assets\Scripts\LegoShipController.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
