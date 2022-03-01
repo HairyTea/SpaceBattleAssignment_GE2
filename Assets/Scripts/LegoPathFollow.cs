@@ -4,41 +4,39 @@ using UnityEngine;
 
 public class LegoPathFollow : MonoBehaviour
 {
-
+    // Spaceship var
     public Vector3 velocity;
-    public float speed;
+    public float shipSpeed;
     public Vector3 acceleration;
     public Vector3 force;
-    public float maxSpeed = 5;
-    public float maxForce = 10;
+    public float maxShipSpeed = 5;
+    public float maxShipForce = 10;
+    public float shipMass = 1;
+    public float banking = 0.1f;
+    public float damping = 0.1f;
 
-    public float mass = 1;
-
+    // Seek
     public bool seekEnabled = true;
     public Transform seekTargetTransform;
     public Vector3 seekTarget;
+    
+    // Path Follow
+    public LegoPath path;
+    public bool pathFollowingEnabled = false;
+    public float waypointDistance = 3;
 
+    // Arrive
     public bool arriveEnabled = false;
     public Transform arriveTargetTransform;
     public Vector3 arriveTarget;
     public float slowingDistance = 80;
 
-    public LegoPath path;
-    public bool pathFollowingEnabled = false;
-    public float waypointDistance = 3;
-
-    public float banking = 0.1f;
-
-    public float damping = 0.1f;
-
-    public bool playerSteeringEnabled = false;
-    public float steeringForce = 100;
-
+    // Pursue
     public bool pursueEnabled = false;
     public LegoPathFollow pursueTarget;
-
     public Vector3 pursueTargetPos;
 
+    // Offset Pursue
     public bool offsetPursueEnabled = false;
     public LegoPathFollow leader;
     public Vector3 offset;
@@ -48,9 +46,8 @@ public class LegoPathFollow : MonoBehaviour
     public Vector3 Pursue(LegoPathFollow pursueTarget)
     {
         float dist = Vector3.Distance(pursueTarget.transform.position, transform.position);
-        float time = dist / maxSpeed;
-        pursueTargetPos = pursueTarget.transform.position
-                    + pursueTarget.velocity * time;
+        float time = dist / maxShipSpeed;
+        pursueTargetPos = pursueTarget.transform.position + pursueTarget.velocity * time;
         return Seek(pursueTargetPos);
     }
 
@@ -61,7 +58,7 @@ public class LegoPathFollow : MonoBehaviour
 
 
         float dist = Vector3.Distance(transform.position, worldTarget);
-        float time = dist / maxSpeed;
+        float time = dist / maxShipSpeed;
 
         targetPos = worldTarget + (leader.velocity * time);
         return Arrive(targetPos);
@@ -74,20 +71,6 @@ public class LegoPathFollow : MonoBehaviour
             offset = transform.position - leader.transform.position;
             offset = Quaternion.Inverse(leader.transform.rotation) * offset;
         }
-    }
-
-    public Vector3 PlayerSteering()
-    {
-        Vector3 force = Vector3.zero;
-        force += Input.GetAxis("Vertical") * transform.forward * steeringForce;
-
-        Vector3 projected = transform.right;
-        projected.y = 0;
-        projected.Normalize();
-
-        force += Input.GetAxis("Horizontal") * projected * steeringForce;
-
-        return force;
     }
 
     public Vector3 PathFollow()
@@ -110,7 +93,7 @@ public class LegoPathFollow : MonoBehaviour
     public Vector3 Seek(Vector3 target)
     {
         Vector3 toTarget = target - transform.position;
-        Vector3 desired = toTarget.normalized * maxSpeed;
+        Vector3 desired = toTarget.normalized * maxShipSpeed;
 
         return (desired - velocity);
     }
@@ -123,22 +106,22 @@ public class LegoPathFollow : MonoBehaviour
         {
             return Vector3.zero;
         }
-        float ramped = (dist / slowingDistance) * maxSpeed;
-        float clamped = Mathf.Min(ramped, maxSpeed);
+        float ramped = (dist / slowingDistance) * maxShipSpeed;
+        float clamped = Mathf.Min(ramped, maxShipSpeed);
         Vector3 desired = clamped * (toTarget / dist);
         return desired - velocity;
     }
 
     public Vector3 CalculateForce()
     {
-        Vector3 f = Vector3.zero;
+        Vector3 force = Vector3.zero;
         if (seekEnabled)
         {
             if (seekTargetTransform != null)
             {
                 seekTarget = seekTargetTransform.position;
             }
-            f += Seek(seekTarget);
+            force += Seek(seekTarget);
         }
 
         if (arriveEnabled)
@@ -147,40 +130,35 @@ public class LegoPathFollow : MonoBehaviour
             {
                 arriveTarget = arriveTargetTransform.position;
             }
-            f += Arrive(arriveTarget);
+            force += Arrive(arriveTarget);
         }
 
         if (pathFollowingEnabled)
         {
-            f += PathFollow();
-        }
-
-        if (playerSteeringEnabled)
-        {
-            f += PlayerSteering();
+            force += PathFollow();
         }
 
         if (pursueEnabled)
         {
-            f += Pursue(pursueTarget);
+            force += Pursue(pursueTarget);
         }
 
         if (offsetPursueEnabled)
         {
-            f += OffsetPursue(leader);
+            force += OffsetPursue(leader);
         }
 
-        return f;
+        return force;
     }
 
     void Update()
     {
         force = CalculateForce();
-        acceleration = force / mass;
+        acceleration = force / shipMass;
         velocity = velocity + acceleration * Time.deltaTime;
         transform.position = transform.position + velocity * Time.deltaTime;
-        speed = velocity.magnitude;
-        if (speed > 0)
+        shipSpeed = velocity.magnitude;
+        if (shipSpeed > 0)
         {
             Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
             transform.LookAt(transform.position + velocity, tempUp);

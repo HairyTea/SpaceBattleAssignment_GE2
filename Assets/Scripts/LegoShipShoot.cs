@@ -25,7 +25,7 @@ public class LegoShipShoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Vector3.Distance(gameObject.transform.position, target.transform.position) < 40.0f && canShoot)
+        if(Vector3.Distance(gameObject.transform.position, target.transform.position) < 100.0f && canShoot)
         {
             StartCoroutine(ShootShip());
         }
