@@ -20,6 +20,7 @@ ships using keyboard & controller.
 [GE2022 Lego Space Battle Video](https://www.youtube.com/watch?v=yD4-WYSYkrc&ab_channel=HairyTea "GE2022 Lego Space Battle Video")
 
 # Video StoryBoard:
+![image](https://user-images.githubusercontent.com/58917936/156204979-d3bf9f4f-990f-488e-9727-4082062d3b56.png)
 
 # References:
 -https://www.myinstants.com/instant/lego-breaking-57805/
