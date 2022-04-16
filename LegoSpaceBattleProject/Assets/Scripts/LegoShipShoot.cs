@@ -9,7 +9,6 @@ public class LegoShipShoot : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileSpawn;
     public Transform projectileSpawnTwo;
-    public GameObject target;
     public float projectileSpeed = 20f;
     public float lifeTime = 3f;
     public float spawnDelay = 1f;
@@ -17,6 +16,8 @@ public class LegoShipShoot : MonoBehaviour
     public GameObject soundShoot;
 
     public List<GameObject> bullets;
+    public bool Good,Bad = false;
+    private bool isShooting = false;
 
     void Start()
     {
@@ -25,10 +26,7 @@ public class LegoShipShoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Vector3.Distance(gameObject.transform.position, target.transform.position) < 100.0f && canShoot)
-        {
-            StartCoroutine(ShootShip());
-        }
+
     }
 
     public void Fire()
@@ -57,6 +55,8 @@ public class LegoShipShoot : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(1f);
         canShoot = true;
+
+        yield return ShootShip();
     }
 
     IEnumerator DestroyBullet()
@@ -67,5 +67,43 @@ public class LegoShipShoot : MonoBehaviour
             Destroy(bullets[i]);
         }
         bullets.Clear();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Good)
+        {
+            if (other.gameObject.CompareTag("Bad"))
+            {
+                StartCoroutine(ShootShip());
+            }
+        }
+
+        if (Bad)
+        {
+            if (other.gameObject.CompareTag("Good"))
+            {
+                StartCoroutine(ShootShip());
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (Good)
+        {
+            if (other.gameObject.CompareTag("Bad"))
+            {
+                StopAllCoroutines();
+            }
+        }
+
+        if (Bad)
+        {
+            if (other.gameObject.CompareTag("Good"))
+            {
+                StopAllCoroutines();
+            }
+        }
     }
 }
