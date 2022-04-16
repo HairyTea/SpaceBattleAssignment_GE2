@@ -19,14 +19,20 @@ public class LegoShipShoot : MonoBehaviour
     public bool Good,Bad = false;
     private bool isShooting = false;
 
+    bool triggered = false;
+    Collider other;
+
     void Start()
     {
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
-
+        if ( triggered && !other )
+        {
+            StopAllCoroutines();
+        }
     }
 
     public void Fire()
@@ -76,6 +82,8 @@ public class LegoShipShoot : MonoBehaviour
             if (other.gameObject.CompareTag("Bad"))
             {
                 StartCoroutine(ShootShip());
+                triggered = true;
+                this.other = other;
             }
         }
 
@@ -84,6 +92,8 @@ public class LegoShipShoot : MonoBehaviour
             if (other.gameObject.CompareTag("Good"))
             {
                 StartCoroutine(ShootShip());
+                triggered = true;
+                this.other = other;
             }
         }
     }

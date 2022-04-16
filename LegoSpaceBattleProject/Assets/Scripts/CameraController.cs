@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject cam1, cam2, cam3, cam4, cam5, cam6;
+    public GameObject cam1, cam2, cam3, cam4, cam5, cam6, battleSequence;
 
     void Start()
     {
@@ -61,6 +61,7 @@ public class CameraController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
+            battleSequence.SetActive(true);
             cam1.SetActive(false);
             cam2.SetActive(false);
             cam3.SetActive(false);

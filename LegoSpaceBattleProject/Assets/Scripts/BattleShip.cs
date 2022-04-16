@@ -22,6 +22,9 @@ public class BattleShip : MonoBehaviour
     public Vector3 patrolFloat;
 
     public bool Good,Bad = false;
+
+    bool triggered = false;
+    Collider other;
     
 
     public Vector3 Seek(Vector3 target)
@@ -76,6 +79,13 @@ public class BattleShip : MonoBehaviour
             transform.LookAt(transform.position + velocity, tempUp);
             velocity -= (damping * velocity * Time.deltaTime);
         }
+
+        if ( triggered && !other )
+        {
+            seekEnabled = false;
+            patrolEnabled = true;
+            seekTargetTransform = null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -87,6 +97,9 @@ public class BattleShip : MonoBehaviour
                 patrolEnabled = false;
                 seekEnabled = true;
                 seekTargetTransform = other.gameObject.GetComponent<Transform>();
+
+                triggered = true;
+                this.other = other;
             }
         }
 
@@ -97,6 +110,9 @@ public class BattleShip : MonoBehaviour
                 patrolEnabled = false;
                 seekEnabled = true;
                 seekTargetTransform = other.gameObject.GetComponent<Transform>();
+
+                triggered = true;
+                this.other = other;
             }
         }
     }

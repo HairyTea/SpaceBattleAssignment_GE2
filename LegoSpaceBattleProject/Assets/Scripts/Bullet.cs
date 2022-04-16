@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Bad"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Good"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
