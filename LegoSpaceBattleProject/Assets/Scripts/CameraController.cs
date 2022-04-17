@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject cam1, cam2, cam3, cam4, cam5, cam6, battleSequence;
+    public GameObject cam1, cam2, cam3, cam4, cam5, cam6, battleSequence, amongUs;
 
     void Start()
     {
@@ -73,6 +73,11 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+                amongUs.SetActive(true);
         }
 
     }

@@ -1,151 +1,248 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.7f1 (dd97f2c94397) revision 14522354'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 16163 MB
+OS: 'Windows 10 Pro; OS build 19044.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 16298 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Unity.exe
+P:\Unity\Hub\Editor\2020.3.7f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/aaron/Documents/GitHub/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
+F:/Unity Projects/UnityProjects/College Projects/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58600
-Successfully changed project path to: C:/Users/aaron/Documents/GitHub/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
-C:/Users/aaron/Documents/GitHub/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
+49998
+Successfully changed project path to: F:/Unity Projects/UnityProjects/College Projects/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
+F:/Unity Projects/UnityProjects/College Projects/SpaceBattleAssignment_GE2/LegoSpaceBattleProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 17.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.93 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.7f1 (dd97f2c94397)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/aaron/Documents/GitHub/SpaceBattleAssignment_GE2/LegoSpaceBattleProject/Assets
+[Subsystems] Discovering subsystems at path P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Unity Projects/UnityProjects/College Projects/SpaceBattleAssignment_GE2/LegoSpaceBattleProject/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1e89)
     Vendor:   
-    VRAM:     8044 MB
-    Driver:   27.21.14.6262
+    VRAM:     5968 MB
+    Driver:   30.0.14.7196
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Mono path[0] = 'P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Managed'
+Mono path[1] = 'P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001572 seconds.
+Register platform support module: P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: P:/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.274054 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 17.33 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 27.02 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.726 seconds
+- Completed reload, in  3.667 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000494 seconds.
+Registered in 0.000733 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.540 seconds
+- Completed reload, in  1.934 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1126 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 130.7 MB.
 System memory in use after: 130.7 MB.
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1575.
-Total: 1.478500 ms (FindLiveObjects: 0.116900 ms CreateObjectMapping: 0.023600 ms MarkObjects: 1.267500 ms  DeleteObjects: 0.069700 ms)
+Total: 2.280200 ms (FindLiveObjects: 0.381900 ms CreateObjectMapping: 0.245700 ms MarkObjects: 1.560300 ms  DeleteObjects: 0.091400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/PlasmaExplosionEffect.prefab
-  artifactKey: Guid(96730f8640590934eacb6f860058e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/PlasmaExplosionEffect.prefab using Guid(96730f8640590934eacb6f860058e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ff1f11d7fb0a153196b172bd3a0732e') in 0.035396 seconds
-  Import took 0.037927 seconds .
+  path: Assets/Scripts/BattleShip.cs
+  artifactKey: Guid(948e75272ea22434ab2d01edeaca8113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BattleShip.cs using Guid(948e75272ea22434ab2d01edeaca8113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '755cd57743afef98db674d3cc053f9d7') in 0.047462 seconds
+  Import took 0.050611 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab
-  artifactKey: Guid(e1b08032bec16ba4eb1ae23cbd572664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab using Guid(e1b08032bec16ba4eb1ae23cbd572664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8801dded97038e91014276fd348b071') in 0.007693 seconds
-  Import took 0.010006 seconds .
+  Time since last request: 0.000222 seconds.
+  path: Assets/Models/FaceSad.png
+  artifactKey: Guid(fb4a24bfbc8152e4fa71751405307599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/FaceSad.png using Guid(fb4a24bfbc8152e4fa71751405307599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bf2538aa56a5939511d4101f89d2830') in 0.087749 seconds
+  Import took 0.090544 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000574 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.523 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1121 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 130.6 MB.
-System memory in use after: 130.7 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1579.
-Total: 1.358700 ms (FindLiveObjects: 0.128200 ms CreateObjectMapping: 0.022700 ms MarkObjects: 1.163300 ms  DeleteObjects: 0.043800 ms)
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Models/lego_man.FBX
+  artifactKey: Guid(16ceb7c6ea5460e489efbbd3dae63a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/lego_man.FBX using Guid(16ceb7c6ea5460e489efbbd3dae63a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31a9747c67387f4a2576f0d2975fe4c1') in 0.637265 seconds
+  Import took 0.639589 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000469 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.497 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1121 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 130.7 MB.
-System memory in use after: 130.7 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1582.
-Total: 1.599900 ms (FindLiveObjects: 0.153600 ms CreateObjectMapping: 0.027100 ms MarkObjects: 1.354200 ms  DeleteObjects: 0.063900 ms)
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Models/Map__12_Cellular.tga
+  artifactKey: Guid(83d6261f811edac449c747b1aa442eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Map__12_Cellular.tga using Guid(83d6261f811edac449c747b1aa442eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bdc5ea89f0476a43b55428b5e25b84a') in 0.023791 seconds
+  Import took 0.025930 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000448 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.500 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1121 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 130.7 MB.
-System memory in use after: 130.8 MB.
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Models/FaceHappy.png
+  artifactKey: Guid(cf20b52c541fab948b20f246e6bb7cfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/FaceHappy.png using Guid(cf20b52c541fab948b20f246e6bb7cfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5af35d4bdd853c192996209cd07f99f') in 0.012390 seconds
+  Import took 0.015881 seconds .
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1585.
-Total: 1.490400 ms (FindLiveObjects: 0.136300 ms CreateObjectMapping: 0.023000 ms MarkObjects: 1.271900 ms  DeleteObjects: 0.057800 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Prefabs/Stars.prefab
+  artifactKey: Guid(8962a4f5bcb66014b9d25faada9a2401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Stars.prefab using Guid(8962a4f5bcb66014b9d25faada9a2401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86cddc7f010d7040e0d7bd51fa35a85d') in 0.018991 seconds
+  Import took 0.022515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/Materials/SpaceShip_Blue.mat
+  artifactKey: Guid(116c5134f1ef6b5458b5b29f7eb8ee0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SpaceShip_Blue.mat using Guid(116c5134f1ef6b5458b5b29f7eb8ee0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e274dd4ac26a0a4590fe2951463a9c') in 0.025026 seconds
+  Import took 0.029579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Models/asteroid OBJ.obj
+  artifactKey: Guid(1154dd7b21c857748981ea2b155789d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/asteroid OBJ.obj using Guid(1154dd7b21c857748981ea2b155789d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da0496e54a91c93d18b4dc2a1f72fe2c') in 0.025552 seconds
+  Import took 0.027504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Models/among_us.fbx
+  artifactKey: Guid(17cfe56863241284c90d0c573588dac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/among_us.fbx using Guid(17cfe56863241284c90d0c573588dac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b61490fe38d6c2ddb86b97df2536f01d') in 0.037871 seconds
+  Import took 0.041740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Materials/SpaceShip_Black.mat
+  artifactKey: Guid(4f4cb25e6394c2a48895795c5d5fc219) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SpaceShip_Black.mat using Guid(4f4cb25e6394c2a48895795c5d5fc219) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dccc2f030b130b4f84dcd02127a162a') in 0.015893 seconds
+  Import took 0.018202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Models/Map__4_Mix.tga
+  artifactKey: Guid(ce6b97869fae958458873c5c6645c261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Map__4_Mix.tga using Guid(ce6b97869fae958458873c5c6645c261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f98e4a2ff29c860483997547874128c') in 0.015908 seconds
+  Import took 0.018398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Models/SpaceInterior.jpg
+  artifactKey: Guid(26e9e2e993c73ee43bc0b43f4fe7817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/SpaceInterior.jpg using Guid(26e9e2e993c73ee43bc0b43f4fe7817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e091d9e6c01596686721174287e3ddc6') in 0.033392 seconds
+  Import took 0.035644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Materials/SpaceShip_Grey.mat
+  artifactKey: Guid(3e4fbed9a86a3834c9bf57156d5d5cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SpaceShip_Grey.mat using Guid(3e4fbed9a86a3834c9bf57156d5d5cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee2024fef96c11f6629a5c37a7a5712c') in 0.011478 seconds
+  Import took 0.016088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Prefabs/BulletBad.prefab
+  artifactKey: Guid(c3d91c8b037501e4592d684bad74b919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BulletBad.prefab using Guid(c3d91c8b037501e4592d684bad74b919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e91b7306689031ac6b4c62c2148a7bd') in 0.014652 seconds
+  Import took 0.017805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Models/Map__15_Noise.tga
+  artifactKey: Guid(f0e92b3fe9fa9eb47adcb015f42c617e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Map__15_Noise.tga using Guid(f0e92b3fe9fa9eb47adcb015f42c617e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1689cd4b6ca5abcb9f6a9b9507e999') in 0.017787 seconds
+  Import took 0.020517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000461 seconds.
+  path: Assets/Materials/Bullet_Mat 1.mat
+  artifactKey: Guid(3517a52fd3b2a2649a8e60473caed833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Bullet_Mat 1.mat using Guid(3517a52fd3b2a2649a8e60473caed833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c23b2e857224bcb53cd130f43725b956') in 0.013676 seconds
+  Import took 0.016775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Models/FaceEvil.png
+  artifactKey: Guid(fee034ac14252ef419beeaab435847ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/FaceEvil.png using Guid(fee034ac14252ef419beeaab435847ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4baebd4b6aa0d216e454b046e5165789') in 0.016994 seconds
+  Import took 0.019914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Materials/Bullet_Mat.mat
+  artifactKey: Guid(58a37076014659c498cbc570355a7a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Bullet_Mat.mat using Guid(58a37076014659c498cbc570355a7a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5809c98bf7dad1375f0e180901a75635') in 0.018883 seconds
+  Import took 0.022196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Materials/SpaceShip_Red.mat
+  artifactKey: Guid(95b4ad119989aae4e9c1f5be2876bdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SpaceShip_Red.mat using Guid(95b4ad119989aae4e9c1f5be2876bdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e496e88071e16734c1cbcc646d3b1ec7') in 0.028026 seconds
+  Import took 0.031356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Materials/SpaceShip_White.mat
+  artifactKey: Guid(ea28af5bf96055946ab48f07afa4cdbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SpaceShip_White.mat using Guid(ea28af5bf96055946ab48f07afa4cdbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '502db3231196e3cd40a40ddcb9cf11cf') in 0.014491 seconds
+  Import took 0.017240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Models/lego_spaceship.obj
+  artifactKey: Guid(f88c4f23f9775174ba443ad34c82af4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/lego_spaceship.obj using Guid(f88c4f23f9775174ba443ad34c82af4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78c4d3e417527a20c575ce86f07f865') in 1.024355 seconds
+  Import took 1.028680 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Prefabs/Bullet.prefab
+  artifactKey: Guid(3549164c63b2ea8418ecf361d18d75f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bullet.prefab using Guid(3549164c63b2ea8418ecf361d18d75f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5684ae3f4d8aa57689f2fdb7248858c') in 0.013631 seconds
+  Import took 0.015717 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
