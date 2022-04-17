@@ -15,6 +15,7 @@ ships using keyboard & controller.
 - [x] Lego Ship Health - This give the ship health, if the health reaches 0, the ship blows up, playing particle effects and sounds
 - [x] Lego Ship Shoot - This script shoots bullets when they are in the correct range of a target
 - [x] Rotation - This script is just a simple rotation/move script that was meant to be for debris
+- [x] BattleShip - This script adds a patrol behavior aswell as a pursuit behaviour to go after enemeys taged bad, this script is also to help the ending battle sequence
 
 # Final Video:
 [GE2022 Lego Space Battle Video](https://www.youtube.com/watch?v=yD4-WYSYkrc&ab_channel=HairyTea "GE2022 Lego Space Battle Video")
