@@ -18,7 +18,7 @@ ships using keyboard & controller.
 - [x] BattleShip - This script adds a patrol behavior aswell as a pursuit behaviour to go after enemeys taged bad, this script is also to help the ending battle sequence
 
 # Final Video:
-[GE2022 Lego Space Battle Video](https://youtu.be/F9w7EzKUXTo "GE2022 Lego Space Battle Video - Space:2420 (A Lego Space Adventure)")
+[GE2022 Lego Space Battle Video](https://youtu.be/F9w7EzKUXTo "GE2022 Lego Space Battle Video-Space:2420 (A Lego Space Adventure)")
 
 # Video StoryBoard:
 ![image](https://user-images.githubusercontent.com/58917936/156204979-d3bf9f4f-990f-488e-9727-4082062d3b56.png)
