@@ -5,9 +5,13 @@ A lego space battle simulation created in Unity
 The plan is to create a unique lego space battle that involves a story. Adding in multiple behaviours such as Path follow, Seek, Pursue and having the ability to control the
 ships using keyboard & controller.
 
+I decided to go with a lego theme as I don't watch a lot of sci-fi movies/shows but loved lego as kid.
+I decided to go with a Good vs Evil theme and have multiple camera's set up, each with thier own ships with different behaviours, so Cam 1 would be path follow, Cam 2 would be Seek, etc.....
+I've also wanted to add a gigantic end sequence where it is an all out battle against good and evil, with a giant overlord looking over the battlefield.
+
 # Scripts Created & Used:
 - [x] Animation Controller - This controls the animations used by the lego man
-- [x] Bullet - This script tells teh bullet prefab what to do when hitting an object or being fired
+- [x] Bullet - This script tells the bullet prefab what to do when hitting an object or being fired
 - [x] Camera Controller - This controlls the cameras for each ship using the numpad from (1-5)
 - [x] Lego Path - This scripts draws a path for the lego ship to follow
 - [x] Lego PathFollow - This script is mainly what we learned in the last few weeks put together
